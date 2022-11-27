@@ -12,6 +12,28 @@ Uses [OKHttp 3](https://github.com/square/okhttp) under the hood.
 * [How-To](https://github.com/studerw/td-ameritrade-client/wiki/how-to) on the Wiki shows how to use this Java API.
 * [TDA-Client-Example](https://github.com/studerw/tda-client-example) - Simple Java and Maven example project.
 
+## Breaking Equity Fork
+
+This fork introduces several enhancements on top of the base TD client version. Including:
+- ability to pass a http client to use. Useful for the cases when using library to work with multiple accounts (different refresh tokens), and benefit from common http collection pool, keep alive, etc. For this reason oauth handling moved to HttpTdaClient so the http client is not bound to specific refresh token.
+- ability to pass access token if known (optional)
+- placeOrder returns id of the created order
+- RuntimeException replaced by a more specific one
+- Dependencies upgraded to newer versions, including the switch to jakarta packages
+
+This fork is available in maven central repository at:
+
+```xml
+<dependency>
+    <groupId>com.breakingequity</groupId>
+    <artifactId>td-ameritrade-client</artifactId>
+    <version>2.4.2.4</version>
+</dependency>
+```
+
+Pull request to the upstream:
+https://github.com/studerw/td-ameritrade-client/pull/54
+
 ## Required TDA Properties
 
 The client only requires a TDA client ID (<em>consumer key</em>) and current OAuth refresh token. 
