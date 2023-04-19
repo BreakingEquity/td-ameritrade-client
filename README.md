@@ -27,7 +27,7 @@ This fork is available in maven central repository at:
 <dependency>
     <groupId>com.breakingequity</groupId>
     <artifactId>td-ameritrade-client</artifactId>
-    <version>2.4.2.4</version>
+    <version>2.4.3.1</version>
 </dependency>
 ```
 
